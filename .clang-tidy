@@ -1,0 +1,19 @@
+Checks: >-
+  -*,
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-loop-convert,
+  modernize-use-default-member-init,
+  modernize-use-equals-default,
+  modernize-use-equals-delete,
+  modernize-use-nullptr,
+  modernize-use-override,
+  modernize-use-using
+WarningsAsErrors: '*'
+HeaderFilterRegex: '(^|/)src/|(^|/)include/ereaderplatform(functions)?\.h$'
+FormatStyle: file
+CheckOptions:
+  modernize-loop-convert.MinConfidence: reasonable
+  # QStringLiteral expands unnamed enums owned by Qt; named project enums remain checked.
+  performance-enum-size.EnumIgnoreList: '::.*\(unnamed enum'
